@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="assets/Images/favicon.png" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+
+    <link rel="stylesheet" href="style.css" />
+    <title>Portfolio</title>
+  </head>
+  <body>
+    <div class="header-wrapper">
+      <!--Navbar-->
+      <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Anoop</a>
+          <button
+            class="navbar-toggler bg-danger"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="index.html"
+                  >Home</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about.html">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="timeline.html">Timeline</a>
+              </li>
+                         <li class="nav-item">
+                <a class="nav-link" href="contact.html">Contact Me</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <!--Landing-->
+    <div class="container contact-sec">
+      <div class="row heading">
+        <div class="col-lg-12">
+          <h1>Contact Me</h1>
+        </div>
+        <div class="row form-sec">
+          <div class="col-lg-12">
+            <form id="submit-form">
+              <div class="form-group">
+                <input  
+                  type="text"
+                  class="form-control"
+                  id="inputname"
+                  placeholder="Name"
+                  name="name"
+                />
+              </div>
+              <div class="form-group">
+                <input
+                  type="email"
+                  class="form-control"
+                  id="inputemail"
+                  placeholder="Email"
+                  name="email"
+                />
+              </div>
+              <div class="form-group">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="inputmob"
+                  placeholder="Mobile Number"
+                  name="phone"
+                />
+              </div>
+              <div class="form-group">
+                <textarea
+                  type="textarea"
+                  class="form-control"
+                  id="inputmessage"
+                  placeholder="Message"
+                  name="message"
+                >
+                </textarea>
+              </div>
+              <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--footer-->
+    <div class="container footer">
+      <div class="row text-center">
+        <div class="col-lg-12">
+          <h1>Follow me</h1>
+        </div>
+        <div class="col-lg-12">
+          <div class="d-flex justify-content-center">
+            <i class="fa-brands fa-facebook me-2"></i>
+            <i class="fa-brands fa-github me-2"></i>
+            <i class="fa-brands fa-youtube me-2"></i>
+            <i class="fa-brands fa-x-twitter me-2"></i>
+            <i class="fa-brands fa-linkedin me-2"></i>
+          </div>
+        </div>
+        <div class="col-lg-12">
+          <p>Designed & Built by Anoop</p>
+        </div>
+      </div>
+    </div>
+
+    <!--Scripts-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+      $("#submit-form").submit((e) => {
+        e.preventDefault();
+        $.ajax({
+          url: "https://script.google.com/macros/s/AKfycbwz7YRNypUuyU1j_-5VgFN_RU69qxd-15lc1zYbqwk8bIvd9iVhNepNML3GhUsRAhE/exec",
+          data: $("#submit-form").serialize(),
+          method: "post",
+          success: function (response) {
+            alert("Form submitted successfully");
+            window.location.reload();
+          },
+          error: function (err) {
+            alert("Something Error");
+          },
+        });
+      });
+    </script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"
+      integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
